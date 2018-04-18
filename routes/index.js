@@ -15,6 +15,7 @@ const callbackModel = () => {
 router.use((req, res, next) => {
 	// 中间件 - 指定的路由都将经过这里
 	// 做访问拦截 - token验证等
+	next()
 })
 
 
