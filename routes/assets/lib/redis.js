@@ -8,7 +8,12 @@ redis.on("error", function(error) {
 });
 
 function setData(index, el, time) {
-	return redis.set(index, el, 'EX', time);
+	if(time){
+		return redis.set(index, el, 'EX', time);
+	}
+	else{
+		return redis.set(index, el);
+	}
 }
 
 function getData(index) {
